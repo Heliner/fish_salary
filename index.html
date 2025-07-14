@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摸鱼助手</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+        }
+        .earnings-display {
+  font-size: 5rem;
+  position: relative;
+  font-weight: bold;
+  margin: 2rem auto;
+  color: #2c3e50;
+  animation: moneyChange 1s ease-out;
+  display: inline-block;
+  text-align: center;
+}
+        .money-icon {
+            color: #FFD700;
+            margin-right: 0.5rem;
+            font-size: 1.2em;
+        }
+        @keyframes moneyChange {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-10px); opacity: 0.5; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .earnings-up {
+            animation: moneyUp 1s ease-out;
+        }
+        @keyframes moneyUp {
+            0% { color: #2c3e50; }
+            50% { color: #e74c3c; transform: scale(1.2); }
+            100% { color: #2c3e50; }
+        }
+        .settings {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 500px;
+        }
+        .settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .settings-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 0 1rem 0;
+        }
+        .setting-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        input, select {
+            padding: 0.75rem;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+    .floating-money {
+  position: absolute;
+  right: -15px;
+  top: -35px;
+  font-size: 3.5rem;
+  opacity: 0;
+  color: #e74c3c;
+  z-index: 100;
+  animation: floatUp 1.5s forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>今日工资收入</h1>
+        <div class="earnings-display" id="earnings">
+            <span class="money-icon">💰</span>
+            <span id="earningsAmount">0.00</span>
+        </div>
+        <div class="settings">
+            <div class="settings-header">
+                <h2 class="settings-title">收入设置</h2>
+            </div>
+            <div class="setting-group">
+                <div style="display: flex; align-items: center; gap: 10px;">
+  <label for="workHoursStart">上班</label>
+  <input type="time" id="workHoursStart" step="900" value="09:00" required onclick="this.showPicker()">
+  <label for="workHoursEnd">下班</label>
+  <input type="time" id="workHoursEnd" step="900" value="18:00" required onclick="this.showPicker()">
+</div>
+            </div>
+            <div class="setting-group">
+                <label for="monthlySalary">月工资</label>
+                <input type="number" id="monthlySalary" value="8000">
+            </div>
+            <div class="setting-group">
+                <label for="workPattern">工作模式</label>
+                <select id="workPattern">
+                    <option value="double_weekend">双休</option>
+                    <option value="big_small_week">大小周</option>
+                    <option value="996">996</option>
+                </select>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="main.ts" type="module"></script>
+</body>
+</html>
