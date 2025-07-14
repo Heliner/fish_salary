@@ -4,6 +4,8 @@
 
 ![](https://github.com/Heliner/fish_salary/blob/main/res/demo.gif)
 
+[Try It Online](https://fish-salary.vercel.app/)
+
 ## 功能特点
 - 支持多种工作模式（双休、大小周、996）
 - 自定义工作时间段和时薪设置
@@ -19,8 +21,8 @@
 ### 安装步骤
 1. 克隆本仓库
 ```bash
-git clone https://github.com/yourusername/salary-calculator.git
-cd salary-calculator
+git clone https://github.com/Heliner/fish_salary.git
+cd fish_salary
 ```
 
 2. 安装依赖
@@ -70,36 +72,6 @@ npm run build
 ## 注意事项
 - 双休日历数据为模拟数据，实际使用时可从接口获取真实数据
 - 计算结果仅供娱乐，不代表实际工资收入
-
-## 在Vercel上免费部署
-
-### 准备工作
-1. 将项目推送到GitHub仓库
-2. 注册/登录Vercel账号: https://vercel.com/signup
-
-### 部署步骤
-1. 安装Vercel CLI
-```bash
-npm install -g vercel
-```
-
-2. 在项目根目录执行部署命令
-```bash
-vercel
-```
-
-3. 按照提示完成部署配置:
-   - 确认项目根目录
-   - 选择框架预设: `Other`
-   - 设置构建命令: `npm run build`
-   - 设置输出目录: `dist`
-   - 是否覆盖现有设置: `No`
-
-4. 等待部署完成，Vercel会提供一个URL（如 https://salary-calculator.vercel.app）
-
-### 自动部署配置
-1. 将代码推送到GitHub后，Vercel会自动检测并部署更新
-2. 如需自定义部署设置，可在Vercel控制台修改项目配置
 
 ## 技术栈
 - HTML/CSS/JavaScript
