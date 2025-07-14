@@ -1,6 +1,8 @@
+简体中文 / [English](./README_EN.md)
+
 # 工资计算器应用
 
-一个简单的工资计算应用，可根据工作模式、工作时间和时薪显示今日实时收入工资。
+一个简单的摸鱼工资计算器，可根据工作模式、工作时间和时薪显示今日实时收入工资。
 
 ![](https://github.com/Heliner/fish_salary/blob/main/res/demo.gif)
 
